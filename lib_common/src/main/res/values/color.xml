@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5897c7</color>
+    <color name="colorPrimaryDark">#5897c7</color>
+    <color name="colorAccent">#5897c7</color>
+
+    <!-- 透明 -->
+    <color name="transparent">#00ffffff</color>
+    <!--主要颜色-->
+    <color name="main_color">#5897c7</color>
+    <!--内容区重要信息用色-->
+    <color name="main_color_error">#D94C4C</color>
+    <!--界面核心按钮颜色-->
+    <color name="main_color_button">#018EFB</color>
+    <!--重要的标题字体36/32px-->
+    <color name="main_color_title">#333333</color>
+    <!--正文段落文字 28px-->
+    <color name="main_color_text_major">#666666</color>
+    <!--辅助文字、次要文字 24px-->
+    <color name="main_color_text">#999999</color>
+    <!--线框按钮的边框颜色-->
+    <color name="main_color_border">#cccccc</color>
+
+    <!-- 标题文字颜色 -->
+    <color name="main_title">#ffffff</color>
+
+    <!-- 输入文字 -->
+    <color name="default_deep_gray">#6a6a6a</color>
+    <color name="default_light_gray">#a0a0a0</color>
+
+    <!-- 分割线 -->
+    <color name="line">#eeeeee</color>
+    <!-- 分割线 -->
+    <color name="lineBig">#eeeeee</color>
+    <!--  深色分割线，导航栏下分割线 -->
+    <color name="lineDeep">#E6E6E6</color>
+
+
+
+    <!--默认的颜色-->
+    <color name="hint_color">#b4b4b4</color>
+    <color name="text_color">#99000000</color>
+    <color name="text_color_999">#999999</color>
+
+
+    <color name="black1">#1a000000</color>
+    <color name="black2">#33000000</color>
+    <color name="black3">#4b000000</color>
+    <color name="black4">#66000000</color>
+    <color name="black5">#80000000</color>
+    <color name="black6">#99000000</color>
+    <color name="black7">#b2000000</color>
+    <color name="black8">#cc000000</color>
+    <color name="black">#000000</color>
+</resources>

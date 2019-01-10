@@ -1,0 +1,225 @@
+/**
+ * maven通用依赖库，版本控制
+ **/
+ext.deps = [:]
+def versions = [:]
+//架构相关
+versions.gradle = "3.2.0"
+versions.arch = "1.1.0"
+versions.room = "1.0.0"
+versions.dagger = "2.11"
+versions.retrofit = "2.3.0"
+versions.rxjava2 = "2.1.5"
+versions.rxandroid = "2.0.1"
+versions.arouter_version = "1.3.1"
+versions.arouter_processor_version = "1.1.4"
+versions.kotlin = "1.2.51"
+versions.paging = "1.0.0-alpha3"
+versions.okhttp = "3.9.0"
+versions.butterknife = "8.4.0"
+versions.rxbinding = "2.0.0"
+versions.rxlifecycle = "2.0.1"
+versions.rxpermissions = "0.9.4@aar"
+//测试相关
+versions.robolectric = "3.4"
+versions.junit = "4.12"
+versions.espresso = "3.0.1"
+versions.mockwebserver = "3.8.1"
+versions.mockito = "2.+"
+versions.atsl_runner = "1.0.1"
+versions.atsl_rules = "1.0.1"
+versions.hamcrest = "1.3"
+//加密解密
+versions.apache_commons = "2.5"
+//插件化
+versions.dexmaker = "2.2.0"
+//UI
+versions.support = "26.1.0"
+versions.constraint_layout = "1.0.2"
+versions.recyclerviewhelper = "2.9.40"
+versions.smartrefreshlayout = "1.1.0-alpha-5"
+//图片
+versions.glide = "4.0.0"
+//日志
+versions.timber = "4.5.1"
+versions.logutils_version = "1.5.1.1"
+def deps = [:]
+
+def support = [:]
+support.annotations = "com.android.support:support-annotations:$versions.support"
+support.app_compat = "com.android.support:appcompat-v7:$versions.support"
+support.recyclerview = "com.android.support:recyclerview-v7:$versions.support"
+support.cardview = "com.android.support:cardview-v7:$versions.support"
+support.design = "com.android.support:design:$versions.support"
+support.v4 = "com.android.support:support-v4:$versions.support"
+support.core_utils = "com.android.support:support-core-utils:$versions.support"
+deps.support = support
+
+def room = [:]
+room.runtime = "android.arch.persistence.room:runtime:$versions.room"
+room.compiler = "android.arch.persistence.room:compiler:$versions.room"
+room.rxjava2 = "android.arch.persistence.room:rxjava2:$versions.room"
+room.testing = "android.arch.persistence.room:testing:$versions.room"
+deps.room = room
+
+def lifecycle = [:]
+lifecycle.runtime = "android.arch.lifecycle:runtime:$versions.arch"
+lifecycle.extensions = "android.arch.lifecycle:extensions:$versions.arch"
+lifecycle.java8 = "android.arch.lifecycle:common-java8:$versions.arch"
+lifecycle.compiler = "android.arch.lifecycle:compiler:$versions.arch"
+deps.lifecycle = lifecycle
+
+def arch_core = [:]
+arch_core.testing = "android.arch.core:core-testing:$versions.arch"
+deps.arch_core = arch_core
+
+def okhttp = [:]
+okhttp.okhttp3 = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.okhttp3_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
+deps.okhttp = okhttp
+
+def butterknife = [:]
+butterknife.runtime = "com.jakewharton:butterknife:$versions.butterknife"
+butterknife.compiler = "com.jakewharton:butterknife-compiler:$versions.butterknife"
+butterknife.plugin = "com.jakewharton:butterknife-gradle-plugin:$versions.butterknife"
+deps.butterknife = butterknife
+
+def arouter = [:]
+arouter.runtime = "com.alibaba:arouter-api:$versions.arouter_version"
+arouter.compiler = "com.alibaba:arouter-compiler:$versions.arouter_processor_version"
+deps.arouter = arouter
+
+def retrofit = [:]
+retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
+retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+deps.retrofit = retrofit
+
+
+def dagger = [:]
+dagger.runtime = "com.google.dagger:dagger:$versions.dagger"
+dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
+dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
+dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
+dagger.android_processor = "com.google.dagger:dagger-android-processor:$versions.dagger"
+deps.dagger = dagger
+
+def espresso = [:]
+espresso.core = "com.android.support.test.espresso:espresso-core:$versions.espresso"
+espresso.contrib = "com.android.support.test.espresso:espresso-contrib:$versions.espresso"
+espresso.intents = "com.android.support.test.espresso:espresso-intents:$versions.espresso"
+espresso.idling = "com.android.support.test.espresso.idling:idling-concurrent:$versions.espresso"
+espresso.idling_resource = "com.android.support.test.espresso:espresso-idling-resource:$versions.espresso"
+
+deps.espresso = espresso
+
+def atsl = [:]
+atsl.runner = "com.android.support.test:runner:$versions.atsl_runner"
+atsl.rules = "com.android.support.test:rules:$versions.atsl_runner"
+deps.atsl = atsl
+
+def mockito = [:]
+mockito.core = "org.mockito:mockito-core:$versions.mockito"
+mockito.android = "org.mockito:mockito-android:$versions.mockito"
+deps.mockito = mockito
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+deps.kotlin = kotlin
+
+def glide = [:]
+glide.runtime = "com.github.bumptech.glide:glide:$versions.glide"
+glide.okhttp3_integration = "com.github.bumptech.glide:okhttp3-integration:4.0.0-RC1"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
+
+def rxbinding = [:]
+rxbinding.runtime = "com.jakewharton.rxbinding2:rxbinding:$versions.rxbinding"
+rxbinding.support_v4 = "com.jakewharton.rxbinding2:rxbinding-support-v4:$versions.rxbinding"
+rxbinding.appcompat_v7 = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$versions.rxbinding"
+rxbinding.design = "com.jakewharton.rxbinding2:rxbinding-design:$versions.rxbinding"
+rxbinding.recyclerview_v7 = "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$versions.rxbinding"
+deps.rxbinding = rxbinding
+
+
+def rxlifecycle = [:]
+rxlifecycle.runtime = "com.trello.rxlifecycle2:rxlifecycle:$versions.rxlifecycle"
+rxlifecycle.android = "com.trello.rxlifecycle2:rxlifecycle-android:$versions.rxlifecycle"
+rxlifecycle.components = "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle"
+deps.rxlifecycle = rxlifecycle
+
+//appcompat-v7版本 23以上（必须）
+def smartrefreshlayout = [:]
+smartrefreshlayout.runtime = "com.scwang.smartrefresh:SmartRefreshLayout:$versions.smartrefreshlayout"
+smartrefreshlayout.header = "com.scwang.smartrefresh:SmartRefreshHeader:$versions.smartrefreshlayout"//没有使用特殊Header，可以不加这行
+deps.smartrefreshlayout = smartrefreshlayout
+
+deps.paging = "android.arch.paging:runtime:$versions.paging"
+deps.dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:$versions.dexmaker"
+deps.constraint_layout = "com.android.support.constraint:constraint-layout:$versions.constraint_layout"
+deps.timber = "com.jakewharton.timber:timber:$versions.timber"
+deps.junit = "junit:junit:$versions.junit"
+deps.robolectric = "org.robolectric:robolectric:$versions.robolectric"
+deps.mock_web_server = "com.squareup.okhttp3:mockwebserver:$versions.mockwebserver"
+deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
+deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
+deps.logutils = "com.apkfuns.logutils:library:$versions.logutils_version"
+deps.hamcrest = "org.hamcrest:hamcrest-all:$versions.hamcrest"
+deps.recyclerviewhelper = "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.recyclerviewhelper"
+//gradle
+deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.gradle"
+//权限
+deps.rxpermissions = "com.tbruyelle.rxpermissions2:rxpermissions:$versions.rxpermissions"
+/**
+ * 其他一些引用，可根据自己需求增加或者删除
+ */
+//Android屏幕适配方案，此项目已经不再更新
+deps.autolayout = "com.zhy:autolayout:1.4.5"
+//无限层级树状图
+deps.bmelnychuk = "com.github.bmelnychuk:atv:1.2.9"
+//对话框
+deps.android_prompt_dialog = "com.github.limxing:Android-PromptDialog:1.1.3"
+//下载框架
+deps.download_rxjava = "com.github.JiangAndroidwork:RetrofitOfRxJava:4.2"
+//服务器框架
+deps.andserver = "com.yanzhenjie:andserver:1.1.4"
+//标签
+deps.flowlayout = "cn.lankton:flowlayout:3.1.0"
+//可编辑删除的标签库
+deps.MultiFlowLayout = "com.github.AnJiaoDe:MultiFlowLayout:V1.1.2"
+//移动消除
+deps.badgeview = "q.rorbin:badgeview:1.1.3"
+//RecyclerView粘性标签库
+deps.pinned_section_item = "com.oushangfeng:PinnedSectionItemDecoration:1.2.5"
+//textview文字对齐
+deps.align_text_view = "me.codeboy.android:align-text-view:2.3.2"
+//左滑动删除
+deps.EasySwipeMenuLayout = "com.github.anzaizai:EasySwipeMenuLayout:1.1.2"
+ext.deps = deps
+
+//版本控制
+def build_versions = [:]
+build_versions.min_sdk = 22
+build_versions.target_sdk = 28
+build_versions.build_tools = "28.0.3"
+ext.build_versions = build_versions
+
+def addRepos(RepositoryHandler handler) {
+
+    handler.maven {
+        url 'https://maven.google.com/'
+        name 'Google'
+    }
+//    handler.google()
+    handler.mavenLocal()
+    handler.jcenter()
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    handler.maven { url 'https://oss.jfrog.org/libs-snapshot' }
+    handler.maven { url 'https://jitpack.io' }
+    handler.mavenCentral()
+
+}
+
+ext.addRepos = this.&addRepos

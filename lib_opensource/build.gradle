@@ -1,0 +1,112 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    // Support libraries
+    api deps.support.app_compat
+    api deps.support.design
+    api deps.support.cardview
+    api deps.support.recyclerview
+
+    // Architecture components
+    api deps.paging
+//    api deps.lifecycle.runtime
+//    api deps.lifecycle.extensions
+//    kapt deps.lifecycle.compiler
+//    api deps.room.runtime
+//    kapt deps.room.compiler
+
+    //glide
+    api deps.glide.runtime
+    api deps.glide.okhttp3_integration
+
+    //rxbinding
+    api deps.rxbinding.runtime
+    api deps.rxbinding.support_v4
+    api deps.rxbinding.appcompat_v7
+    api deps.rxbinding.design
+
+    //rxlifecycle
+    api deps.rxlifecycle.runtime
+    api deps.rxlifecycle.android
+    api deps.rxlifecycle.components
+
+    //rxpermissions
+    api deps.rxpermissions
+
+    //okhttp3
+    api deps.retrofit.runtime
+    api deps.retrofit.gson
+    api deps.retrofit.adapter_rxjava2
+    api deps.okhttp.okhttp3
+    api deps.okhttp.okhttp3_logging_interceptor
+
+    // RxJava
+    api deps.rxjava2
+    api deps.rxandroid
+
+    //kotlin
+    api deps.kotlin.stdlib
+
+    //dagger
+    api deps.dagger.runtime
+    api deps.dagger.android
+    api deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_processor
+
+    //router
+    api deps.arouter.runtime
+    //logutils
+    api deps.logutils
+    //UI
+    api deps.constraint_layout
+    api deps.recyclerviewhelper
+    api deps.smartrefreshlayout.runtime
+    api deps.smartrefreshlayout.header
+    //对话框
+    api deps.android_prompt_dialog
+    //下载框架
+    api deps.download_rxjava
+    //下载框架
+    api deps.andserver
+    //可编辑删除的标签库
+    api deps.MultiFlowLayout
+    //对齐文字
+    api deps.align_text_view
+    //左滑删除
+    api deps.EasySwipeMenuLayout
+
+
+}
